@@ -39,7 +39,21 @@ const routes = [
   {
     path: '/logs',
     component: LogsPage,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: true },
+    children: [
+      {
+        path: 'client',
+        component: () => import('../components/Logs/ClientLogs.vue')
+      },
+      {
+        path: 'account',
+        component: () => import('../components/Logs/AccountLogs.vue')
+      },
+      {
+        path: 'email',
+        component: () => import('../components/Logs/EmailLogs.vue')
+      }
+    ]
   }
 ]
 
