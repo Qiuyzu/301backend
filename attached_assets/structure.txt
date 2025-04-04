@@ -1,0 +1,49 @@
+frontend/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Account/
+│   │   │   ├── AccountForm.vue
+│   │   │   ├── AccountList.vue
+│   │   ├── Client/
+│   │   │   ├── ClientForm.vue
+│   │   │   ├── ClientList.vue
+│   │   ├── User/
+│   │   │   ├── Login.vue
+│   │   │   ├── Register.vue
+│   │   │   ├── UserList.vue
+│   │   ├── Logs/
+│   │   │   ├── ClientLogs.vue
+│   │   │   ├── AccountLogs.vue
+│   │   │   ├── EmailLogs.vue
+│   │   ├── Transactions/
+│   │   │   ├── TransactionList.vue
+│   ├── views/
+│   │   ├── Dashboard.vue
+│   │   ├── LoginPage.vue
+│   │   ├── ClientPage.vue
+│   │   ├── AccountPage.vue
+│   │   ├── TransactionPage.vue
+│   │   ├── LogsPage.vue
+│   ├── router/
+│   │   └── index.js
+│   ├── store/
+│   │   └── index.js
+│   ├── services/
+│   │   ├── api.js          // axios instance
+│   │   ├── auth.js         // login, register, token handling
+│   │   ├── userService.js
+│   │   ├── clientService.js
+│   │   ├── accountService.js
+│   │   ├── logService.js
+│   │   ├── transactionService.js
+│   ├── utils/
+│   │   └── validators.js   // Form validation rules
+│   ├── App.vue
+│   └── main.js
+├── .env                   // API_URL, etc.
+├── vite.config.js
+├── package.json
+└── README.md
