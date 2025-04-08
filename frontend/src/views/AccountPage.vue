@@ -1,9 +1,12 @@
-
 <template>
   <div class="account-page">
     <h1>Account Management</h1>
     <router-link to="/clients/new" class="create-link">Create Client</router-link>
     <AccountList :accounts="accounts" @account-updated="fetchAccounts"/>
+    <div class="nav-buttons">
+      <button @click="$router.push('/accounts')">MANAGE ACCOUNTS</button>
+      <button @click="$router.push('/dashboard')" class="return-btn">Return to Dashboard</button>
+    </div>
   </div>
 </template>
 

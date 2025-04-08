@@ -36,6 +36,11 @@ const routes = [
     meta: { requiresAuth: true }
   },
   {
+    path: '/accounts/unassigned',
+    component: () => import('../views/UnassignedAccountPage.vue'),
+    meta: { requiresAuth: true, requiresAdmin: true }
+  },
+  {
     path: '/transactions',
     component: TransactionPage,
     meta: { requiresAuth: true }

@@ -1,12 +1,12 @@
-
 <template>
   <div class="dashboard">
     <h1>Admin Dashboard</h1>
     <div class="nav-buttons">
       <button @click="$router.push('/accounts')">MANAGE ACCOUNTS</button>
       <button @click="$router.push('/transactions')">VIEW TRANSACTIONS</button>
-      <button @click="$router.push('/clients/unassigned')">MANAGE UNASSIGNED CLIENTS</button>
+      <button @click="$router.push('/accounts/unassigned')">MANAGE UNASSIGNED ACCOUNTS</button>
       <button @click="$router.push('/settings')">SETTINGS</button>
+      <button @click="logout" class="logout-btn">LOGOUT</button>
     </div>
     <div class="recent-activities">
       <h3>RECENT ACTIVITIES</h3>
@@ -31,12 +31,20 @@ export default {
     const router = useRouter()
     const store = useStore()
 
+    const logout = () => {
+      // Add your logout logic here
+      store.dispatch('logout'); // Example using Vuex
+      router.push('/login'); // Redirect to login page
+    };
+
+
     onMounted(async () => {
       // Fetch admin logs
     })
 
     return {
-      recentLogs
+      recentLogs,
+      logout
     }
   }
 }
@@ -67,5 +75,8 @@ button {
   background-color: #F5F5F5;
   padding: 20px;
   margin-top: 20px;
+}
+.logout-btn {
+  margin-left: auto; /* Push to the right */
 }
 </style>

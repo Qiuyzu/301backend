@@ -6,6 +6,7 @@
       <button @click="$router.push('/clients')">CREATE CLIENT PROFILE</button>
       <button @click="$router.push('/clients')">MANAGE PROFILE</button>
       <button @click="$router.push('/transactions')">VIEW TRANSACTIONS</button>
+      <button @click="logout" class="logout-btn">LOGOUT</button>
     </div>
     <div class="recent-activities">
       <h3>RECENT ACTIVITIES</h3>
