@@ -2,13 +2,13 @@
   <div class="dashboard">
     <div class="top-bar">
       <h1>Admin Dashboard</h1>
-      <button @click="logout" class="logout-btn">LOGOUT</button>
     </div>
     <div class="nav-buttons">
       <button @click="$router.push('/accounts')">MANAGE ACCOUNTS</button>
       <button @click="$router.push('/transactions')">VIEW TRANSACTIONS</button>
       <button @click="$router.push('/accounts/unassigned')">MANAGE UNASSIGNED ACCOUNTS</button>
       <button @click="$router.push('/settings')">SETTINGS</button>
+      <button @click="logout" class="logout-btn">LOGOUT</button>
     </div>
     <div class="recent-activities">
       <h3>RECENT ACTIVITIES</h3>
