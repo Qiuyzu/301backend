@@ -1,8 +1,6 @@
 <template>
   <div class="dashboard">
-    <div class="top-bar">
       <h1>Admin Dashboard</h1>
-    </div>
     <div class="nav-buttons">
       <button @click="$router.push('/accounts')">MANAGE ACCOUNTS</button>
       <button @click="$router.push('/transactions')">VIEW TRANSACTIONS</button>
