@@ -3,10 +3,9 @@
   <div class="dashboard">
     <h1>Admin Dashboard</h1>
     <div class="nav-buttons">
-      <button @click="$router.push('/accounts/new')">CREATE NEW ACCOUNT</button>
       <button @click="$router.push('/accounts')">MANAGE ACCOUNTS</button>
       <button @click="$router.push('/transactions')">VIEW TRANSACTIONS</button>
-      <button @click="$router.push('/clients/unassigned')">MANAGE UNASSIGNED CLIENT</button>
+      <button @click="$router.push('/clients/unassigned')">MANAGE UNASSIGNED CLIENTS</button>
       <button @click="$router.push('/settings')">SETTINGS</button>
     </div>
     <div class="recent-activities">
