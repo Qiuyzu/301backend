@@ -5,6 +5,7 @@ import ClientPage from '../views/ClientPage.vue'
 import AccountPage from '../views/AccountPage.vue'
 import TransactionPage from '../views/TransactionPage.vue'
 import LogsPage from '../views/LogsPage.vue'
+import ClientForm from '../components/Client/ClientForm.vue'
 
 const routes = [
   {
@@ -28,6 +29,11 @@ const routes = [
   {
     path: '/clients',
     component: ClientPage,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/clients/new',
+    component: ClientForm,
     meta: { requiresAuth: true }
   },
   {
