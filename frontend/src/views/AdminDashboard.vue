@@ -7,7 +7,7 @@
       <button @click="$router.push('/accounts/unassigned')">MANAGE UNASSIGNED ACCOUNTS</button>
       <button @click="$router.push('/settings')">SETTINGS</button>
   </div>
-  <div class="bottom-buttons">
+  <div class="bottom-buttons" style="margin-top: auto; padding: 20px;">
     <button @click="logout" class="logout-btn">LOGOUT</button>
   </div>
     <div class="recent-activities">

@@ -1,8 +1,13 @@
 
 <template>
   <div class="client-page">
-    <h1>Create Client Profile</h1>
-    <ClientForm @client-created="handleClientCreated"/>
+    <h1>Client Management</h1>
+    <div class="actions">
+      <button @click="$router.push('/clients/new')" class="create-btn">Create New Client</button>
+    </div>
+    <div class="client-list">
+      <ClientList :clients="clients" @client-updated="fetchClients"/>
+    </div>
     <div class="bottom-buttons">
       <button @click="$router.push('/agent-dashboard')" class="return-btn">Return to Dashboard</button>
     </div>
@@ -11,19 +16,16 @@
 
 <script>
 import { ref, onMounted } from 'vue'
-import ClientForm from '../components/Client/ClientForm.vue'
 import ClientList from '../components/Client/ClientList.vue'
 import { clientService } from '../services/clientService'
 
 export default {
   name: 'ClientPage',
   components: {
-    ClientForm,
     ClientList
   },
   setup() {
     const clients = ref([])
-    const showForm = ref(false)
 
     const fetchClients = async () => {
       try {
@@ -33,17 +35,10 @@ export default {
       }
     }
 
-    const handleClientCreated = () => {
-      showForm.value = false
-      fetchClients()
-    }
-
     onMounted(fetchClients)
 
     return {
       clients,
-      showForm,
-      handleClientCreated,
       fetchClients
     }
   }
@@ -53,16 +48,31 @@ export default {
 <style scoped>
 .client-page {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
 }
 
-.client-actions {
+.actions {
   margin: 20px 0;
 }
 
-button {
+.create-btn {
+  background-color: #4CAF50;
+  color: white;
   padding: 10px 20px;
-  background-color: #D9D2C6;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+.client-list {
+  flex: 1;
+}
+
+.bottom-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 </style>
