@@ -17,9 +17,14 @@ const routes = [
     component: LoginPage
   },
   {
-    path: '/dashboard',
-    component: Dashboard,
-    meta: { requiresAuth: true }
+    path: '/admin-dashboard',
+    component: () => import('../views/AdminDashboard.vue'),
+    meta: { requiresAuth: true, requiresAdmin: true }
+  },
+  {
+    path: '/agent-dashboard',
+    component: () => import('../views/AgentDashboard.vue'),
+    meta: { requiresAuth: true, requiresAgent: true }
   },
   {
     path: '/clients',

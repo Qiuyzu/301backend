@@ -27,8 +27,13 @@ export default {
 
     const handleLogin = async () => {
       try {
-        // TODO: Implement login API call
-        router.push('/dashboard')
+        const response = await store.dispatch('auth/login', credentials.value)
+        const userRole = store.state.auth.userRole
+        if (userRole === 'admin') {
+          router.push('/admin-dashboard')
+        } else {
+          router.push('/agent-dashboard')
+        }
       } catch (error) {
         console.error('Login failed:', error)
       }
