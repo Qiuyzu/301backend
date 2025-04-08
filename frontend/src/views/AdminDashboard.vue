@@ -1,15 +1,15 @@
 <template>
   <div class="dashboard">
-    <h1>Admin Dashboard</h1>
+    <div class="top-bar">
+      <h1>Admin Dashboard</h1>
+      <button @click="logout" class="logout-btn">LOGOUT</button>
+    </div>
     <div class="nav-buttons">
       <button @click="$router.push('/accounts')">MANAGE ACCOUNTS</button>
       <button @click="$router.push('/transactions')">VIEW TRANSACTIONS</button>
       <button @click="$router.push('/accounts/unassigned')">MANAGE UNASSIGNED ACCOUNTS</button>
       <button @click="$router.push('/settings')">SETTINGS</button>
-  </div>
-  <div class="bottom-buttons" style="margin-top: auto; padding: 20px;">
-    <button @click="logout" class="logout-btn">LOGOUT</button>
-  </div>
+    </div>
     <div class="recent-activities">
       <h3>RECENT ACTIVITIES</h3>
       <ul>
@@ -55,6 +55,13 @@ export default {
 <style scoped>
 .dashboard {
   padding: 20px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .nav-buttons {

@@ -2,8 +2,8 @@
   <div class="dashboard">
     <h1>Agent Dashboard</h1>
     <div class="nav-buttons">
-      <button @click="$router.push('/clients')">CREATE CLIENT PROFILE</button>
-      <button @click="$router.push('/clients')">MANAGE PROFILE</button>
+      <button @click="$router.push('/clients/new')">CREATE CLIENT PROFILE</button>
+      <button @click="$router.push('/clients')">MANAGE CLIENT PROFILES</button>
       <button @click="$router.push('/transactions')">VIEW TRANSACTIONS</button>
       <button @click="logout" class="logout-btn">LOGOUT</button>
     </div>

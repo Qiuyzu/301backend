@@ -2,9 +2,6 @@
 <template>
   <div class="client-page">
     <h1>Client Management</h1>
-    <div class="actions">
-      <button @click="$router.push('/clients/new')" class="create-btn">Create New Client</button>
-    </div>
     <div class="client-list">
       <ClientList :clients="clients" @client-updated="fetchClients"/>
     </div>
@@ -29,7 +26,8 @@ export default {
 
     const fetchClients = async () => {
       try {
-        clients.value = await clientService.getAllClients()
+        const response = await clientService.getAllClients()
+        clients.value = response.data
       } catch (error) {
         console.error('Error fetching clients:', error)
       }
@@ -53,26 +51,21 @@ export default {
   min-height: 80vh;
 }
 
-.actions {
+.client-list {
+  flex: 1;
   margin: 20px 0;
 }
 
-.create-btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.client-list {
-  flex: 1;
-}
-
 .bottom-buttons {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
+  margin-top: 20px;
+}
+
+.return-btn {
+  padding: 10px 20px;
+  background-color: #D9D2C6;
+  border: none;
+  cursor: pointer;
 }
 </style>
