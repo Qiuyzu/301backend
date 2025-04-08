@@ -2,10 +2,7 @@
 <template>
   <div class="account-page">
     <h1>Account Management</h1>
-    <div class="account-actions">
-      <button @click="showForm = !showForm">{{ showForm ? 'Hide Form' : 'Create Account' }}</button>
-    </div>
-    <AccountForm v-if="showForm" @account-created="handleAccountCreated"/>
+    <router-link to="/clients/new" class="create-link">Create Client</router-link>
     <AccountList :accounts="accounts" @account-updated="fetchAccounts"/>
   </div>
 </template>
