@@ -1,4 +1,3 @@
-
 <template>
   <div class="dashboard">
     <h1>Agent Dashboard</h1>
@@ -31,12 +30,18 @@ export default {
     const router = useRouter()
     const store = useStore()
 
+    const logout = () => {
+      store.dispatch('logout');
+      router.push('/login');
+    };
+
     onMounted(async () => {
       // Fetch agent activities
     })
 
     return {
-      recentActivities
+      recentActivities,
+      logout
     }
   }
 }

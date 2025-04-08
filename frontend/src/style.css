@@ -77,3 +77,27 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.bottom-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.return-btn {
+  padding: 10px 20px;
+  background-color: #D9D2C6;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}

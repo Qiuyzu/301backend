@@ -1,12 +1,11 @@
 
 <template>
   <div class="client-page">
-    <h1>Client Management</h1>
-    <div class="client-actions">
-      <button @click="showForm = !showForm">{{ showForm ? 'Hide Form' : 'Create Client' }}</button>
+    <h1>Create Client Profile</h1>
+    <ClientForm @client-created="handleClientCreated"/>
+    <div class="bottom-buttons">
+      <button @click="$router.push('/agent-dashboard')" class="return-btn">Return to Dashboard</button>
     </div>
-    <ClientForm v-if="showForm" @client-created="handleClientCreated"/>
-    <ClientList :clients="clients" @client-updated="fetchClients"/>
   </div>
 </template>
 

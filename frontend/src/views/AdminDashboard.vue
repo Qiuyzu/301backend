@@ -6,8 +6,10 @@
       <button @click="$router.push('/transactions')">VIEW TRANSACTIONS</button>
       <button @click="$router.push('/accounts/unassigned')">MANAGE UNASSIGNED ACCOUNTS</button>
       <button @click="$router.push('/settings')">SETTINGS</button>
-      <button @click="logout" class="logout-btn">LOGOUT</button>
-    </div>
+  </div>
+  <div class="bottom-buttons">
+    <button @click="logout" class="logout-btn">LOGOUT</button>
+  </div>
     <div class="recent-activities">
       <h3>RECENT ACTIVITIES</h3>
       <ul>

@@ -85,10 +85,11 @@ export default {
     }
 
     const returnToDashboard = () => {
-      if (userRole.value === 'admin') {
-        router.push('/admin-dashboard')
+      const role = store.state.auth.userRole;
+      if (role === 'admin') {
+        router.push('/admin-dashboard');
       } else {
-        router.push('/agent-dashboard')
+        router.push('/agent-dashboard');
       }
     }
 
